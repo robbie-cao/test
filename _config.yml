@@ -9,7 +9,7 @@
 title: Tempus fugit!
 email: robbie.cao@gmail.com
 description: >          # '>' means to ignore newlines until "baseurl:"
-    Robbie Cao's GitHub I/O
+    Robbie Cao's Blog
 # Above text will appear in your document head meta (for
 # Google search results) and in your feed.xml site description.
 baseurl: ""                         # Subpath of site, e.g. /blog
