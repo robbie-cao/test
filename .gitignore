@@ -41,4 +41,5 @@ taghl_config.txt
 *.log
 *.csv
 _site
+.sass-cache
 ~$*
