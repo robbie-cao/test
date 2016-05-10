@@ -17,5 +17,23 @@ url: "http://robbie-cao.github.io"  # Base hostname & protocol for site
 twitter_username: robbie_cao
 github_username:  robbie-cao
 
-# Build settings
+# Build Settings
 markdown: kramdown
+
+# Default Setting for GitHub (Can be Changed)
+github: [metadata]
+kramdown:
+    input: GFM
+    hard_wrap: false
+gems:
+    - jekyll-coffeescript
+    - jekyll-paginate
+
+# Default Setting for GitHub (Cannot be Changed)
+lsi: false
+safe: true
+source: 
+incremental: false
+highlighter: rouge
+gist:
+    noscript: false
