@@ -5,10 +5,10 @@ date:   2016-05-10
 categories: developer
 ---
 
-h1. To be a Productive and Proactive Developer
+h1=. To be a Productive and Proactive Developer
 
-h4. Robbie Cao
-h4. Mar 16, 2016
+h4=. Robbie Cao
+h4=. Mar 16, 2016
 
 h2. Communication
 
