@@ -35,8 +35,16 @@ gems:
     - jekyll-toc
     - jekyll-tagging
     - jekyll_figure
+    - jekyll-mentions
+    - jekyll-redirect-from
+    - jekyll-sitemap
+    - jekyll-feed
 
-# Textile
+
+# Markdown Extension
+markdown_ext: "markdown,mdown,md"
+
+# Textile Extension
 textile_ext: "textile,txtl,tl"
 
 # Default Setting for GitHub (Cannot be Changed)
