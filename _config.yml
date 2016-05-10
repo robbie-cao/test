@@ -20,6 +20,9 @@ github_username:  robbie-cao
 # Build Settings
 markdown: kramdown
 
+# Blog Settings
+permalink: /blog/:year/:month/:day/:title
+
 # Default Setting for GitHub (Can be Changed)
 github: [metadata]
 kramdown:
