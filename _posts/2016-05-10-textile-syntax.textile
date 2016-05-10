@@ -1,8 +1,8 @@
 h1. level 1 heading
 
-h2. level 2 heading
+h2=. level 2 heading
 
-h3. level 3 heading
+h3>. level 3 heading
 
 h4<{color:red}. level 4 heading
 
