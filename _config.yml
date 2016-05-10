@@ -31,6 +31,13 @@ kramdown:
 gems:
     - jekyll-coffeescript
     - jekyll-paginate
+    - jekyll-textile-converter
+    - jekyll-toc
+    - jekyll-tagging
+    - jekyll_figure
+
+# Textile
+textile_ext: "textile,txtl,tl"
 
 # Default Setting for GitHub (Cannot be Changed)
 lsi: false
