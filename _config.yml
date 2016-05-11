@@ -1,0 +1,57 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site Settings
+title: Tempus fugit!
+email: robbie.cao@gmail.com
+description: >          # '>' means to ignore newlines until "baseurl:"
+    Robbie Cao's Blog
+# Above text will appear in your document head meta (for
+# Google search results) and in your feed.xml site description.
+baseurl: ""                         # Subpath of site, e.g. /blog
+url: "http://robbie-cao.github.io"  # Base hostname & protocol for site
+twitter_username: robbie_cao
+github_username:  robbie-cao
+
+# Build Settings
+markdown: kramdown
+
+# Blog Settings
+permalink: /blog/:year/:month/:day/:title
+
+# Default Setting for GitHub (Can be Changed)
+github: [metadata]
+kramdown:
+    input: GFM
+    hard_wrap: false
+gems:
+    - jekyll-coffeescript
+    - jekyll-paginate
+    - jekyll-textile-converter
+    - jekyll-toc
+    - jekyll-tagging
+    - jekyll_figure
+    - jekyll-mentions
+    - jekyll-redirect-from
+    - jekyll-sitemap
+    - jekyll-feed
+
+
+# Markdown Extension
+markdown_ext: "markdown,mdown,md"
+
+# Textile Extension
+textile_ext: "textile,txtl,tl"
+
+# Default Setting for GitHub (Cannot be Changed)
+lsi: false
+safe: true
+source: 
+incremental: false
+highlighter: rouge
+gist:
+    noscript: false
