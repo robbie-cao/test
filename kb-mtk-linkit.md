@@ -1,16 +1,21 @@
 # MediaTek MT7687/7697 LinkIt Platform
 
-## Introduction
+## Overview
 
-MediaTek LinkIt(TM) Development Platform for RTOS provides a comprehensive software solution for devices based
-on the MT76x7 and MT2523x SOCs.
+MediaTek LinkIt(TM) Development Platform for RTOS provides a comprehensive software solution for devices based on the MediaTek MT7687F SOC,
+including the LinkIt 7687 hardware development kit (HDK). The platform supports hardware abstraction layers, peripheral drivers, FreeRTOS,
+Wi-Fi and lwIP modules. This API reference describes the features of and how to use the APIs for each of the supported modules.
+Each module has a readme.txt under the module root directory. It contains the information about the module dependency, feature options,
+notes and brief introduction. Please refer to the readme.txt to learn the basic usage of the module.
 
-1. Getting started
+More information on Linkit SDK official site: http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit_rtos/sdk_intro/index.gsp
 
-   The SDK package supports GCC, Keil, and IAR tool chains. Follow the instructions at <sdk_root>/doc/LinkIt_for_RTOS_Get_Started_Guide.pdf
-   to build your first project and run it on the HDK. Release notes are also under the <sdk_root>/doc folder.
+## Getting Started
 
-2. Folder structure
+The SDK package supports GCC, Keil, and IAR tool chains. Follow the instructions at <sdk_root>/doc/LinkIt_for_RTOS_Get_Started_Guide.pdf
+to build your first project and run it on the HDK. Release notes are also under the <sdk_root>/doc folder.
+
+## Folder Structure
 
    ```
    \doc                      ->  SDK documents, including get started guide, developer's guide, software and environment guide,
@@ -32,13 +37,7 @@ on the MT76x7 and MT2523x SOCs.
                              **  Please make sure you have /tools/gcc before you build the SDK under linux environment. **
    ```
 
-## Overview
-
-MediaTek LinkIt(TM) Development Platform for RTOS provides a comprehensive software solution for devices based on the MediaTek MT7687F SOC,
-including the LinkIt 7687 hardware development kit (HDK). The platform supports hardware abstraction layers, peripheral drivers, FreeRTOS,
-Wi-Fi and lwIP modules. This API reference describes the features of and how to use the APIs for each of the supported modules.
-Each module has a readme.txt under the module root directory. It contains the information about the module dependency, feature options,
-notes and brief introduction. Please refer to the readme.txt to learn the basic usage of the module.
+## Architecture
 
 ![Architecture](http://home.labs.mediatek.com/media/apis/7687/MT7687_SDK_architecture.PNG)
 
@@ -63,7 +62,7 @@ The architecture layers are described below:
 
 > http://labs.mediatek.com/fileMedia/download/20ee756c-903c-4ec4-8fb4-163697638589
 
-**Mac OS**
+#### Mac OS
 
   ```
   $ brew install gcc-arm-none-eabi
@@ -73,7 +72,7 @@ The architecture layers are described below:
 
 > http://robbie-cao.github.io/blog/2016/05/17/install-gcc-arm-on-mac
 
-**Linux**
+#### Linux
 
   ```
   $ cd ~
@@ -84,7 +83,7 @@ The architecture layers are described below:
   $ ln -s ~/Tools/gcc-arm-none-eabi-5_4-2016q2 tools/gcc/linux/gcc-arm-none-eabi
   ```
 
-**Cygwin**
+#### Cygwin
 
   ```
   $ cd ~
@@ -98,6 +97,59 @@ The architecture layers are described below:
 **Build in Cygwin NOT support yet.**
 
 ### IAR
+
+> TBD
+
+## Build
+
+### `build.sh`
+
+  ```
+  ===============================================================
+  Build Project
+  ===============================================================
+  Usage: ./build.sh <board> <project> [bl|clean] <argument>
+
+  Example:
+         ./build.sh mt7687_hdk iot_sdk_demo
+         ./build.sh mt7687_hdk iot_sdk_demo bl      (build with bootloader)
+         ./build.sh clean                      (clean folder: out)
+         ./build.sh mt7687_hdk clean           (clean folder: out/mt7687_hdk)
+         ./build.sh mt7687_hdk iot_sdk_demo clean   (clean folder: out/mt7687_hdk/iot_sdk_demo)
+
+  Argument:
+         -f=<feature makefile> or --feature=<feature makefile>
+             Replace feature.mk with other makefile. For example,
+             the feature_example.mk is under project folder, -f=feature_example.mk
+             will replace feature.mk with feature_example.mk.
+
+         -o=<make option> or --option=<make option>
+             Assign additional make option. For example,
+             to compile module sequentially, use -o=-j1.
+             to turn on specific feature in feature makefile, use -o=<feature_name>=y
+             to assign more than one options, use -o=<option_1> -o=<option_2>.
+
+  ===============================================================
+  List Available Example Projects
+  ===============================================================
+  Usage: ./build.sh list
+  ```
+
+### `mmm [path] [option]`
+
+**Run `source envsetup` first of all.**
+
+  ```
+  Usage:
+    mmm [path] [option]
+    - path   - relative path to Makefile (for an App) to be built with
+    - option - target to make, eg clean, debug, release, etc
+  Example:
+    mmm project/mt7687_hdk/apps/iot_sdk_demo clean (* at top folder)
+    mmm project/mt7687_hdk/apps/iot_sdk_demo       (* at top folder)
+    mmm . clean          (* at project/mt7687_hdk/apps/iot_sdk_demo)
+    mmm                  (* at project/mt7687_hdk/apps/iot_sdk_demo)
+  ```
 
 ## Flashing
 
