@@ -4,7 +4,7 @@ function exip() { lynx --dump http://ipecho.net/plain; }
 
 prev_ip=0
 
-if [ -z ip_addr ]; then
+if [ -e ip_addr ]; then
     prev_ip=`cat ip_addr`
 else
     echo "0.0.0.0" > ip_addr
